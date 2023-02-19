@@ -27,22 +27,20 @@ function updateSlidePosition() {
 }
 
 function moveToNextSlide() {
-  /*
-    add an if statement here that checks
-    if you're already at the max number of slides
-    and if so, sets your slidePosition to the first index of an array
-    if not, set the slidePosition to the current position plus one
-  */
+  if(slidePosition === totalSlides - 1){
+    slidePostion = 0;
+  } else {
+    slidePosition += 1;
+  }
   updateSlidePosition(); // this is how you call a function within a function
 }
 function moveToPrevSlide() {
   // add your code in here for when you click the "prev" button
-  /*
-    add an if statement here that checks
-    if you're already at the first index position for an array
-    and if so, sets your slidePosition to the last slide position in totalSlides
-    if not, set the slidePosition to the current position minus one
-  */
+  if(slidePosition === 0){
+    slidePosition = 3;
+  } else {
+    slidePosition = slidePosition - 1;
+  }
   updateSlidePosition();
 }
 
@@ -55,6 +53,11 @@ document.querySelector('.next') // Get the appropriate element (<button class="n
     console.log('clicked next'); // let's tell the client console we made it to this point in the script
     moveToNextSlide(); // call the function above to handle this
   });
-
 // Paying close attention to the above queryselector, write one that fires
 // when you want a "prev" slide
+
+document.querySelector('.prev') // Get the appropriate element (<button class="prev">)
+  .addEventListener('click', () => { // set an event listener on it - when it's clicked, do this callback function
+    console.log('clicked prev'); // let's tell the client console we made it to this point in the script
+    moveToPrevSlide(); // call the function above to handle this
+  });  
