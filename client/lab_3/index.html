@@ -23,12 +23,16 @@
       </div>
       <div class="right_section box">
         <header><h2>Image Carousel</h2></header>
-        <div class="grid">
-        <img src="images/post_cat.jpg" alt = "Mail carrier cat"> 
-        <img src="images/home_depot_cat.jpg" alt = "Home Depot cat"> 
-        <img src="images/office_cat" alt = "Office worker cat"> 
-        <img src="images/construction_cat" alt = "Construction worker cat"> 
+        <div class="carousel">
+            <button class="prev"></button>
+            <div class="slides">
+            <div class="carousel_item visible"><img id='slide_1' src="images/post_cat.jpg" alt = "Mail carrier cat"></div>
+            <div class="carousel_item hidden"><img id='slide_2' src="images/home_depot_cat.jpg" alt = "Home Depot cat"></div>
+            <div class="carousel_item hidden"><img id='slide_3' src="images/office_cat.jpg" alt = "Office worker cat"></div>
+            <div class="carousel_item hidden"><img id='slide_4' src="images/construction_cat.jpg" alt = "Construction worker cat"></div>
+            </div>
         </div>
+        <button class="next"></button>
         <div> 
             <ol class="box"> 
               Image Descriptions:<br>
