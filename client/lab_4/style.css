@@ -8,7 +8,7 @@
 */
 
 html {
-  background-color: #fff;
+  background-color: #8cae68;
   font-size: 16px;
   min-width: 300px;
   overflow-x: hidden;
@@ -30,7 +30,7 @@ body {
   font-family: ‘Segoe UI’, Candara, ‘Bitstream Vera Sans’, ‘DejaVu Sans’, ‘Bitsream Vera Sans’, ‘Trebuchet MS’, Verdana, ‘Verdana Ref’, sans-serif;
   font-weight: 400;
   line-height: 1.5;
-  background-color: rgb(239, 239, 239);
+  background-color: #8cae68;
 }
 
 
@@ -70,6 +70,7 @@ div {
 }
 
 .container {
+  background-color: #d991ba;
   margin: 0 20px;
   display: flex;
   justify-content: space-evenly;
@@ -96,7 +97,7 @@ div {
   /* this will push other blocks out of the way */
 
   /* colors */
-  background-color: #ffe08a;
+  background-color: #60992d;
   color: #4a4a4a;
 
   /* shapes */
@@ -122,7 +123,7 @@ div {
 */
 
 .box {
-  background-color: rgba(239, 239, 239, 0.40);
+  background-color: #d991ba;
   border: 2px dashed;
   border-radius: 4px;
 
@@ -133,20 +134,22 @@ div {
 }
 
 .left_section {
-  background-color: rgba(0, 139, 139, 0.8);
+  background-color: #f5d5ed;
   flex: 0 1 auto;
   margin: 1rem;
   padding: 1.5rem;
 }
 
 .right_section {
-  background-color: rgba(255, 224, 138, 0.7);
+  background-color: #f5d5ed;
   flex: 1 2 auto;
   margin: 1rem;
+  padding: 1.5rem;
   align-items: center;
-
   display: flex;
   flex-direction: column;
+  justify-content: center;
+
 }
 
 /*
@@ -159,7 +162,7 @@ div {
   border: 2px dashed;
   flex-shrink: 0;
   padding: 1rem;
-  background-color: rgba(0, 139, 139, 0.8);
+  background-color: #60992d;
   font-size: 1.2rem;
   font-weight: 600;
 }
@@ -178,12 +181,12 @@ div {
   /* Hue, saturation, luminosity, alpha */
   background-color: hsla(0, 0%, 90%, 0.15);
   /* red, green, blue, alpha */
-  color: rgb(246, 169, 93);
+  color: #8cae68;
   text-decoration: none;
 }
 
 .subtitle {
-  color: rgba(0, 0, 0, 0.8);
+  color: #f5d5ed;
   margin: 0px;
   margin-bottom: 5px;
 }
@@ -265,12 +268,14 @@ div.carousel {
 
 .prev:focus,
 .next:focus {
+  olor: #d991ba;
   margin: 0;
   /* Pick a good border colour and check out how it works with your buttons */
 }
 
 .prev:hover,
 .next:hover {
+  color: #d991ba;
   /* Pick a good background colour for your hover pseudoclass */
 }
 
@@ -309,7 +314,7 @@ form label {
   /* Rules in here will only apply when a screen is the correct size */
   /* check it out by using your developer tools to shrink your screen-size */
   .container {
-    background-color: rgba(204, 8, 162, 0.65);
+    background-color: rgba(243, 123, 217, 0.65);
     flex-direction: column;
     justify-content: center;
     align-items: center;
