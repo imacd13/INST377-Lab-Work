@@ -144,7 +144,6 @@ div {
   flex: 1 2 auto;
   margin: 1rem;
   align-items: center;
-  max-width: 450px;
 
   display: flex;
   flex-direction: column;
@@ -157,6 +156,7 @@ div {
 */
 
 .footer {
+  border: 2px dashed;
   flex-shrink: 0;
   padding: 1rem;
   background-color: rgba(0, 139, 139, 0.8);
@@ -313,5 +313,17 @@ form label {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .left_section { 
+
+  }
+
+  .right_section {
+
+  }
+
+  .box {
+
   }
 }
