@@ -331,13 +331,13 @@ form label {
   .left_section { 
     background-color: #f5d5ed;
     border: 2px dashed rgba(0, 0, 0, 0.8);
-    flex: 1 1 auto;
+    flex: 0 1 auto;
   }
 
   .right_section {
     background-color: #f5d5ed;
     border: 2px dashed rgba(0, 0, 0, 0.8);
-    flex: 1 1 auto;
+    flex: 1 2 auto;
     margin: 1rem;
     padding: 1.5rem;
     align-items: center;
