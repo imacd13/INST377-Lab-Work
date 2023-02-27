@@ -39,7 +39,7 @@ a {
   text-decoration: none;
 }
 
-h2 {
+h2, h3 {
   margin:0;
   padding:0;
   padding-bottom:1.5rem;
@@ -55,6 +55,10 @@ form {
   - like this: <div class="wrapper">
   - note that the period vanishes there!
 */
+
+div {
+  border:2px dashed rgba(0, 0, 0, 0.8);
+}
 
 
 .wrapper {
@@ -100,7 +104,7 @@ form {
   font-size: 1.5rem;
   padding: 1.25rem;
   margin:0; /* removing the margin on h1 tags means the header pins to the top if we move */
-
+  border:6px dashed rgba(0, 0, 0, 0.8);
 
   /* box-shadows are fancy */
   box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
