@@ -56,11 +56,6 @@ form {
   - note that the period vanishes there!
 */
 
-div {
-  border:2px dashed rgba(0, 0, 0, 0.8);
-}
-
-
 .wrapper {
   min-height: 100vh;
   display: flex;
@@ -70,6 +65,7 @@ div {
 }
 
 .container {
+  border: 2px dashed rgba(0, 0, 0, 0.8);
   background-color: #d991ba;
   margin: 0 20px;
   display: flex;
@@ -135,6 +131,7 @@ div {
 
 .left_section {
   background-color: #f5d5ed;
+  border: 2px dashed rgba(0, 0, 0, 0.8);
   flex: 0 1 auto;
   margin: 1rem;
   padding: 1.5rem;
@@ -142,6 +139,7 @@ div {
 
 .right_section {
   background-color: #f5d5ed;
+  border: 2px dashed rgba(0, 0, 0, 0.8);
   flex: 1 2 auto;
   margin: 1rem;
   padding: 1.5rem;
@@ -149,7 +147,6 @@ div {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
 }
 
 /*
@@ -320,15 +317,32 @@ form label {
     align-items: center;
   }
 
-  .left_section { 
+  .box {
+    background-color: #d991ba;
+    border: 2px dashed;
+    border-radius: 4px;
+  
+    width: fit-content;
+    height:fit-content;
+    padding: 1.5rem;
+    margin: 0 auto;
+  }
 
+  .left_section { 
+    background-color: #f5d5ed;
+    border: 2px dashed rgba(0, 0, 0, 0.8);
+    flex: 1 1 auto;
   }
 
   .right_section {
-
-  }
-
-  .box {
-
+    background-color: #f5d5ed;
+    border: 2px dashed rgba(0, 0, 0, 0.8);
+    flex: 1 1 auto;
+    margin: 1rem;
+    padding: 1.5rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
