@@ -21,6 +21,7 @@ html {
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  height: 100%;
 }
 
 body {
@@ -94,10 +95,10 @@ form {
 
   /* colors */
   background-color: #60992d;
-  color: #4a4a4a;
+  color: #030303;
 
   /* shapes */
-  border:6px dashed rgba(0, 0, 0, 0.8);
+  border:6px dashed rgb(0, 0, 0);
   border-radius: 6px;
   font-size: 1.5rem;
   padding: 1.25rem;
@@ -156,12 +157,14 @@ form {
 */
 
 .footer {
+  position: sticky;
   border: 2px dashed;
   flex-shrink: 0;
   padding: 1rem;
   background-color: #60992d;
   font-size: 1.2rem;
   font-weight: 600;
+  
 }
 
 .footer a {
