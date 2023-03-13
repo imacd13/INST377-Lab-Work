@@ -314,6 +314,12 @@
     display: block; /* this turns the label text into a box we can set margins on */
     margin-bottom: 0.5rem;
   }
+
+  form button {
+    width: fill-available;
+    justify-content: center;
+    align-items: flex-start;
+  }
   
   /* How To Write A Media Query For Small Screens */
   
