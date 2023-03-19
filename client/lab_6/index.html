@@ -29,13 +29,17 @@
         >
           <label for="resto">Restaurant Name</label>
           <input type="text" id="resto" name="resto"/>
+        <div class="buttons">
           <button type="submit">Load Data</button>
           <button type="filter" class="filter_button">Filter Data</button>
+        </div>
         </form>
       </div>
-      <div class="right_section">
+      <div class="right_section box">
         <h3>Local Restaurants</h3>
-        <div class="restaurant_list box">A list of local restaurants from an API</div>
+        <ol class="box" id = "restaurant_list">
+            A list of local restaurants from an API
+        </ol>
       </div>
     </div>
   </div>
@@ -50,6 +54,5 @@
       >
     </p>
   </footer>
-  <body></body>
   <script src="./script.js"></script>
 </html>

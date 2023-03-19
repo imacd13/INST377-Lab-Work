@@ -3,12 +3,23 @@
   by adding `<script src="script.js">` just before your closing `</body>` tag
 */
 
+function injectHTML(list) {
+  console.log('fired injectHTML');
+  const target = document.querySelector('#restaurant_list');
+  target.innerHTML = '';
+  list.forEach((item, index) => {
+    /* string that supplies us restaurant name */
+    const str = `<li>${item.name}</li>`;
+    target.innerHTML += str;
+  }) 
+}
+
 /* A quick filter that will return something based on a matching input */
 function filterList(list, query) {
   return list.filter((item) => {
     const lowerCaseName = item.name.toLowerCase();
     const lowerCaseQuery = query.toLowerCase();
-    return lowerCaseName.includes(lowerCaseQuery)
+    return lowerCaseName.includes(lowerCaseQuery);
   })
   /*
     Using the .filter array method, 
@@ -35,29 +46,13 @@ async function mainEvent() { // the async keyword means we can make API requests
     // this is substituting for a "breakpoint" - it prints to the browser to tell us we successfully submitted the form
     console.log('form submission'); 
 
-    /*
-      ## GET requests and Javascript
-        We would like to send our GET request so we can control what we do with the results
-        Let's get those form results before sending off our GET request using the Fetch API
-    
-      ## Retrieving information from an API
-        The Fetch API is relatively new,
-        and is much more convenient than previous data handling methods.
-        Here we make a basic GET request to the server using the Fetch method to the county
-    */
-
     // Basic GET request - this replaces the form Action
     const results = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
 
     // This changes the response from the GET into data we can use - an "object"
     currentList = await results.json();
-
-    /*
-      This array initially contains all 1,000 records from your request,
-      but it will only be defined _after_ the request resolves - any filtering on it before that
-      simply won't work.
-    */
     console.table(currentList); 
+    injectHTML(current_List);
   });
 
   filterButton.addEventListener('click', (event) => {
