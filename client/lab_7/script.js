@@ -100,6 +100,9 @@ async function mainEvent() { // the async keyword means we can make API requests
 
   textField.addEventListener('input', (event) => {
     console.log('input', event.target.value);
+    const newList = filterList(currentList, formProps.resto);
+    console.log(newList);
+    injectHTML(newList);
   })
 
 }
