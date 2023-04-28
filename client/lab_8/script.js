@@ -54,7 +54,7 @@ function initMap(){
   return carto;
 }
 
-function marketPlace(array, map) {
+function markerPlace(array, map) {
   console.log('array for markers', array);
 
   map.eachLayer((layer) => {
@@ -117,16 +117,6 @@ async function mainEvent() {
     loadAnimation.style.display = "none";
     console.table(storedList);
     injectHTML(storedList);
-  });
-
-  filterDataButton.addEventListener("click", (event) => {
-    console.log("clicked filterButton");
-    const formData = new FormData(mainForm);
-    const formProps = Object.fromEntries(formData);
-    console.log(formProps);
-    const newList = filterList(currentList, formProps.resto);
-    console.log(newList);
-    injectHTML(newList);
   });
 
   generateListButton.addEventListener("click", (event) => {
