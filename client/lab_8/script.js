@@ -73,8 +73,8 @@ function markerPlace(array, map) {
 async function mainEvent() {
   // the async keyword means we can make API requests
   const mainForm = document.querySelector(".main_form"); // This class name needs to be set on your form before you can listen for an event on it
-  const filterDataButton = document.querySelector("#filter_button");
   const loadDataButton = document.querySelector("#data_load");
+  const clearDataButton = document.querySelector("#data_clear");
   const generateListButton = document.querySelector("#generate");
   const textField = document.querySelector("#resto");
   // Add a querySelector that targets your filter button here
@@ -86,8 +86,8 @@ async function mainEvent() {
   const carto = initMap();
 
   const storedData = localStorage.getItem('storedData');
-  const parsedData = JSON.parse(storedData);
-  if (parsedData.length > 0) {
+  let parsedData = JSON.parse(storedData);
+  if (parsedData?.length > 0) {
     generateListButton.classList.remove("hidden");
   };
 
@@ -113,6 +113,11 @@ async function mainEvent() {
     // This changes the response from the GET into data we can use - an "object"
     const storedList = await results.json();
     localStorage.setItem('storedData', JSON.stringify(storedList));
+    parsedData = storedList;
+
+    if(storedList?.length > 0) {
+      generateListButton.classList.remove("hidden");
+    }
 
     loadAnimation.style.display = "none";
     console.table(storedList);
@@ -134,6 +139,12 @@ async function mainEvent() {
     injectHTML(newList);
     markerPlace(newList, carto);
   });
+
+  clearDataButton.addEventListener("click", (event) => {
+    console.log('clear browser data');
+    localStorage.clear();
+    console.log('localStorage Check', localStorage.getItem("storedData"))
+  })
 }
 
 /*
