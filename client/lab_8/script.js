@@ -46,8 +46,28 @@ function cutRestaurantList(list) {
 }
 
 function initMap(){
-  const carto = L.map('map').setView([51.505, -0.09], 13);
+  const carto = L.map('map').setView([38.98, -76.93], 13);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(carto);
+  return carto;
+}
 
+function marketPlace(array, map) {
+  console.log('array for markers', array);
+
+  map.eachLayer((layer) => {
+    if (layer instanceof L.Marker) {
+      layer.remove();
+    }
+  });
+
+  array.forEach((item) => {
+    console.log('markerPlace', item);
+    const {coordinates} = item.geocoded_column_1;
+    L.marker([coordinates[1], coordinates[0]]).addTo(map);
+  })
 }
 
 async function mainEvent() {
@@ -62,6 +82,8 @@ async function mainEvent() {
   const loadAnimation = document.querySelector("#data_load_animation");
   loadAnimation.style.display = "none";
   generateListButton.classList.add("hidden");
+
+  const carto = initMap();
 
   const storedData = localStorage.getItem('storedData');
   const parsedData = JSON.parse(storedData);
@@ -112,6 +134,7 @@ async function mainEvent() {
     currentList = cutRestaurantList(parsedData);
     console.log(currentList);
     injectHTML(currentList);
+    markerPlace(currentList, carto);
   });
 
   textField.addEventListener("input", (event) => {
@@ -119,6 +142,7 @@ async function mainEvent() {
     const newList = filterList(currentList, event.target.value);
     console.log(newList);
     injectHTML(newList);
+    markerPlace(newList, carto);
   });
 }
 
