@@ -17,7 +17,6 @@ function injectHTML(list) {
     /* string that supplies us restaurant name */
     const str = `<li>${item.name}</li>`;
     target.innerHTML += str;
-    target.innerHTML += str;
   });
 }
 
